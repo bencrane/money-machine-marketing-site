@@ -45,6 +45,16 @@
     text-decoration: none;
   }
 
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  /* Focus-visible rings for keyboard navigation */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
   /* Form inputs — terminal style */
   .form-input {
     @apply h-12 w-full rounded-lg border border-border bg-card px-4 font-mono text-sm text-foreground placeholder:text-muted/50;
