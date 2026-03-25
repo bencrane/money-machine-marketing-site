@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 
-import { DataTicker } from "@/components/sections/data-ticker";
 import { HeroSection } from "@/components/sections/hero";
 import { PipelineSection } from "@/components/sections/pipeline";
 import { AudienceBuilderSection } from "@/components/sections/audience-builder";
@@ -20,7 +19,6 @@ export function HomePage() {
         />
       </Helmet>
       <HeroSection />
-      <DataTicker />
       <PipelineSection />
       <AudienceBuilderSection />
       <ExecutionSection />
