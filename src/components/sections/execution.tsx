@@ -115,9 +115,9 @@ export function ExecutionSection() {
                   </span>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-sm font-semibold text-foreground">
+                  <h3 className="text-sm font-semibold text-foreground">
                     {example.output.headline}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-foreground/70">{example.output.body}</p>
                   <span className="inline-block font-mono text-xs text-primary">
                     {example.output.cta}
