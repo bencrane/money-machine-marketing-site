@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
+    <header className="sticky top-6 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="container-tight flex h-14 items-center justify-between">
         <a className="inline-flex items-center gap-2 font-mono text-sm font-semibold" href="/">
           <span className="text-primary">▸</span>

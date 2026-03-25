@@ -53,21 +53,23 @@ function TickerStrip({ direction = 1 }: { direction?: 1 | -1 }) {
   );
 }
 
+const STRIP_HEIGHT = "h-6"; // 24px — used for both strips and content offset
+
 export function TickerBorder({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Top ticker strip */}
-      <div className="fixed left-0 right-0 top-0 z-50 border-b border-border/50 bg-black py-1">
+      <div className={`fixed left-0 right-0 top-0 z-[60] flex items-center border-b border-border/50 bg-black ${STRIP_HEIGHT}`}>
         <TickerStrip direction={1} />
       </div>
 
-      {/* Main content with padding for fixed strips */}
+      {/* Main content offset by strip heights */}
       <div className="pt-6 pb-6">
         {children}
       </div>
 
       {/* Bottom ticker strip */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/50 bg-black py-1">
+      <div className={`fixed bottom-0 left-0 right-0 z-[60] flex items-center border-t border-border/50 bg-black ${STRIP_HEIGHT}`}>
         <TickerStrip direction={-1} />
       </div>
     </div>
