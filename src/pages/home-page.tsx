@@ -18,8 +18,8 @@ export function HomePage() {
           content="We build custom data infrastructure that turns ad spend into revenue. Entity resolution, audience construction, attribution — engineered per client."
         />
       </Helmet>
-      <DataTicker />
       <HeroSection />
+      <DataTicker />
       <PipelineSection />
       <AudienceBuilderSection />
       <ExecutionSection />
