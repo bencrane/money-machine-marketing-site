@@ -109,7 +109,7 @@ const STRIP = 24; // px — height of horizontal strips, width of vertical strip
 
 function useScrollFade() {
   const [opacity, setOpacity] = useState(1);
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY;
