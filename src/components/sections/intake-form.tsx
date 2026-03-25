@@ -126,13 +126,13 @@ export function IntakeFormSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-secondary">
+        <p className="mb-4 text-center font-mono text-sm uppercase tracking-[0.18em] text-secondary">
           Chapter 06 — The Machine
         </p>
-        <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
+        <h2 className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight md:text-5xl">
           Every deal makes the next campaign sharper.
         </h2>
-        <p className="mt-4 max-w-xl text-muted">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
           The loop never stops. Every closed deal and every lost deal refines targeting,
           creative, and spend allocation. This is what a machine looks like.
         </p>
@@ -144,9 +144,9 @@ export function IntakeFormSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.4 }}
           onSubmit={handleSubmit(onSubmit)}
-          className="mt-12 max-w-xl space-y-6"
+          className="mx-auto mt-12 max-w-2xl space-y-6"
         >
-          <p className="font-mono text-xs text-muted">
+          <p className="text-center font-mono text-xs text-muted">
             ▸ Client onboarding preview — tell us about your setup
           </p>
 
@@ -235,11 +235,11 @@ export function IntakeFormSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mt-12 max-w-2xl"
+          className="mt-12"
         >
           {/* Company summary */}
           {enrichment && (
-            <div className="mb-8 rounded-lg border border-border bg-card p-5 font-mono text-xs">
+            <div className="mx-auto mb-8 max-w-2xl rounded-lg border border-border bg-card p-5 font-mono text-xs">
               <div className="mb-2 flex items-center gap-2 text-muted">
                 <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                 <span>enrichment.{submitted.domain}</span>
@@ -251,16 +251,16 @@ export function IntakeFormSection() {
           )}
 
           {/* Investigation areas */}
-          <p className="mb-4 font-mono text-xs text-primary">
+          <p className="mb-6 text-center font-mono text-xs text-primary">
             ▸ Here&apos;s what we&apos;d explore first for {enrichment?.name ?? submitted.domain}:
           </p>
 
-          <div className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
             {getInvestigationAreas(submitted).map((area, i) => (
               <motion.div
                 key={area.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 * i, duration: 0.4 }}
                 className="rounded-lg border border-border bg-card p-5"
               >
@@ -275,7 +275,7 @@ export function IntakeFormSection() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg border border-primary/30 bg-primary/5 p-5 font-mono text-sm text-foreground">
+          <div className="mx-auto mt-8 max-w-2xl rounded-lg border border-primary/30 bg-primary/5 p-5 text-center font-mono text-sm text-foreground">
             This is the first 10 minutes of a Money Machine engagement.
             <br />
             <span className="text-muted">
