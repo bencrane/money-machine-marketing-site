@@ -15,7 +15,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="container-tight relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-end gap-8 pb-20 pt-section">
+    <section className="container-tight relative flex min-h-[80svh] flex-col justify-center gap-8 py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
