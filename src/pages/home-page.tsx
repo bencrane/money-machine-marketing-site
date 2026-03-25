@@ -7,6 +7,7 @@ import { AudienceBuilderSection } from "@/components/sections/audience-builder";
 import { ExecutionSection } from "@/components/sections/execution";
 import { AttributionSection } from "@/components/sections/attribution";
 import { IntakeFormSection } from "@/components/sections/intake-form";
+import { ClosingCtaSection } from "@/components/sections/closing-cta";
 
 export function HomePage() {
   return (
@@ -25,6 +26,7 @@ export function HomePage() {
       <ExecutionSection />
       <AttributionSection />
       <IntakeFormSection />
+      <ClosingCtaSection />
     </>
   );
 }
