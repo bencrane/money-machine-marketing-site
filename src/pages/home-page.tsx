@@ -1,24 +1,30 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
-import { CtaSection } from '@/components/sections/cta';
-import { FeaturesSection } from '@/components/sections/features';
-import { HeroSection } from '@/components/sections/hero';
-import { TestimonialsSection } from '@/components/sections/testimonials';
+import { DataTicker } from "@/components/sections/data-ticker";
+import { HeroSection } from "@/components/sections/hero";
+import { PipelineSection } from "@/components/sections/pipeline";
+import { AudienceBuilderSection } from "@/components/sections/audience-builder";
+import { ExecutionSection } from "@/components/sections/execution";
+import { AttributionSection } from "@/components/sections/attribution";
+import { IntakeFormSection } from "@/components/sections/intake-form";
 
 export function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Money Machine | Marketing Site Starter</title>
+        <title>Money Machine — Performance Marketing Infrastructure</title>
         <meta
           name="description"
-          content="A production-ready marketing site starter built with Vite, React, TypeScript, Tailwind v4, and shadcn/ui primitives."
+          content="We build custom data infrastructure that turns ad spend into revenue. Entity resolution, audience construction, attribution — engineered per client."
         />
       </Helmet>
+      <DataTicker />
       <HeroSection />
-      <FeaturesSection />
-      <TestimonialsSection />
-      <CtaSection />
+      <PipelineSection />
+      <AudienceBuilderSection />
+      <ExecutionSection />
+      <AttributionSection />
+      <IntakeFormSection />
     </>
   );
 }

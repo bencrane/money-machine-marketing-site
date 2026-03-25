@@ -1,30 +1,77 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { useState, type FormEvent } from "react";
+import { Search } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { useDomainLookup } from "@/hooks/use-domain-lookup";
+import { EnrichmentCard } from "@/components/sections/enrichment-card";
 
 export function HeroSection() {
+  const [input, setInput] = useState("");
+  const { state, lookup } = useDomainLookup();
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    lookup(input);
+  }
+
   return (
-    <section className="container-tight flex min-h-[65vh] flex-col justify-center gap-8 py-section">
+    <section className="container-tight flex min-h-[70vh] flex-col justify-center gap-8 py-section">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-3xl"
       >
-        <p className="mb-4 text-sm uppercase tracking-[0.18em] text-primary">Marketing Site Starter</p>
+        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-primary">
+          Chapter 01 — The Problem
+        </p>
         <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
-          Ship a polished funnel in days, not weeks.
+          Most B2B paid media is guesswork built on platform data.
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted">
-          This scaffold gives you a production-ready foundation with modern routing, animations,
-          accessible UI primitives, and strict TypeScript quality gates.
+          Ad platforms know what people click. They don&apos;t know what people buy.
+          Every dollar you spend is optimized against the wrong signal.
         </p>
       </motion.div>
 
-      <div className="flex flex-wrap items-center gap-4">
-        <Button size="lg">Start Building</Button>
-        <Button size="lg" variant="ghost">View Docs</Button>
-      </div>
+      {/* Domain lookup */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+      >
+        <p className="mb-3 font-mono text-xs text-muted">
+          Enter a domain. See what we already know.
+        </p>
+        <form onSubmit={handleSubmit} className="flex max-w-md items-center gap-0">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="stripe.com"
+              className="h-12 w-full rounded-l-lg border border-border bg-card pl-10 pr-4 font-mono text-sm text-foreground placeholder:text-muted/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={state.status === "loading"}
+            className="h-12 rounded-r-lg bg-primary px-6 font-mono text-sm font-semibold text-primary-foreground transition-colors hover:brightness-110 disabled:opacity-60"
+          >
+            {state.status === "loading" ? "Enriching..." : "Lookup"}
+          </button>
+        </form>
+
+        {state.status === "error" && (
+          <p className="mt-2 font-mono text-xs text-red-400">{state.message}</p>
+        )}
+      </motion.div>
+
+      {/* Enrichment result */}
+      {state.status === "found" && (
+        <EnrichmentCard data={state.data} synthetic={state.synthetic} />
+      )}
     </section>
   );
 }
