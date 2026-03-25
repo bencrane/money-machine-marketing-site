@@ -22,20 +22,20 @@ export interface SankeyData {
 export const attributionData: SankeyData = {
   nodes: [
     // Sources (left)
-    { id: "google", label: "Google Ads", value: 180000, color: "#5eead4" },
-    { id: "linkedin", label: "LinkedIn", value: 145000, color: "#5eead4" },
-    { id: "meta", label: "Meta", value: 92000, color: "#5eead4" },
-    { id: "reddit", label: "Reddit", value: 48000, color: "#5eead4" },
-    { id: "content", label: "Content Syndication", value: 47000, color: "#5eead4" },
+    { id: "google", label: "Google Ads", value: 180000, color: "#22c55e" },
+    { id: "linkedin", label: "LinkedIn", value: 145000, color: "#22c55e" },
+    { id: "meta", label: "Meta", value: 92000, color: "#22c55e" },
+    { id: "reddit", label: "Reddit", value: 48000, color: "#22c55e" },
+    { id: "content", label: "Content Syndication", value: 47000, color: "#22c55e" },
     // Stage 2: Lead types
-    { id: "mql", label: "MQLs", value: 847, color: "#38bdf8" },
-    { id: "sql", label: "SQLs", value: 312, color: "#38bdf8" },
+    { id: "mql", label: "MQLs", value: 847, color: "#4ade80" },
+    { id: "sql", label: "SQLs", value: 312, color: "#4ade80" },
     // Stage 3: Pipeline
-    { id: "meetings", label: "Meetings Booked", value: 198, color: "#a78bfa" },
-    { id: "proposals", label: "Proposals Sent", value: 89, color: "#a78bfa" },
+    { id: "meetings", label: "Meetings Booked", value: 198, color: "#16a34a" },
+    { id: "proposals", label: "Proposals Sent", value: 89, color: "#16a34a" },
     // Stage 4: Revenue
-    { id: "closed", label: "Closed Won", value: 34, color: "#5eead4" },
-    { id: "revenue", label: "Revenue", value: 2400000, color: "#5eead4" },
+    { id: "closed", label: "Closed Won", value: 34, color: "#22c55e" },
+    { id: "revenue", label: "Revenue", value: 2400000, color: "#22c55e" },
   ],
   links: [
     // Spend → MQLs
