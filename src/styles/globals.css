@@ -15,7 +15,7 @@
 
   --color-primary: #5eead4;
   --color-primary-foreground: #021311;
-  --color-secondary: #a78bfa;
+  --color-secondary: #f59e0b;
   --color-accent: #38bdf8;
   --color-border: #1f2937;
 }
@@ -37,6 +37,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
+    text-wrap: balance;
   }
 
   a {
