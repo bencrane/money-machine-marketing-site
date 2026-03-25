@@ -15,7 +15,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="container-tight relative flex min-h-[80svh] flex-col justify-center gap-8 py-16">
+    <section className="container-tight relative flex flex-col gap-8 pb-12 pt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="mt-4 flex justify-center"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
