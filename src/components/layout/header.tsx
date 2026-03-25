@@ -6,21 +6,21 @@ export function Header() {
           <span className="text-primary">▸</span>
           <span>MONEY MACHINE</span>
         </a>
-        <nav className="hidden items-center gap-5 font-mono text-xs text-muted md:flex">
-          <a className="transition-colors hover:text-foreground" href="#pipeline">
+        <nav className="hidden items-center gap-1 font-mono text-xs text-muted md:flex">
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#pipeline">
             Pipeline
           </a>
-          <a className="transition-colors hover:text-foreground" href="#audience">
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#audience">
             Audience
           </a>
-          <a className="transition-colors hover:text-foreground" href="#attribution">
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#attribution">
             Attribution
           </a>
-          <a className="transition-colors hover:text-foreground" href="#machine">
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#machine">
             The Machine
           </a>
           <a
-            className="rounded-md border border-primary/40 bg-primary/10 px-4 py-1.5 text-primary transition-colors hover:bg-primary/20"
+            className="ml-2 inline-flex h-11 items-center rounded-md border border-primary/40 bg-primary/10 px-4 text-primary transition-colors hover:bg-primary/20"
             href="#machine"
           >
             Start here
