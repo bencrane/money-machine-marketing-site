@@ -103,7 +103,7 @@ export function PipelineSection() {
 
               {/* Card */}
               <div
-                className={`flex-1 rounded-lg border ${stage.borderColor} ${stage.bgColor} p-5 transition-colors`}
+                className={`flex-1 rounded-lg border ${stage.borderColor} ${stage.bgColor} p-5 transition-all hover:border-opacity-60 hover:brightness-110`}
               >
                 <div className="flex items-center gap-3">
                   <span className={`font-mono text-xs font-semibold ${stage.color}`}>

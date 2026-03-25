@@ -80,7 +80,7 @@ export function ExecutionSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2 * i, duration: 0.5 }}
-            className="rounded-xl border border-border bg-card"
+            className="rounded-xl border border-border bg-card transition-colors hover:border-border/80"
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-border px-5 py-3 font-mono text-xs">
