@@ -8,6 +8,14 @@ import { AttributionSection } from "@/components/sections/attribution";
 import { IntakeFormSection } from "@/components/sections/intake-form";
 import { ClosingCtaSection } from "@/components/sections/closing-cta";
 
+function SectionDivider() {
+  return (
+    <div className="container-tight">
+      <div className="border-t border-border/40" />
+    </div>
+  );
+}
+
 export function HomePage() {
   return (
     <>
@@ -19,11 +27,17 @@ export function HomePage() {
         />
       </Helmet>
       <HeroSection />
+      <SectionDivider />
       <PipelineSection />
+      <SectionDivider />
       <AudienceBuilderSection />
+      <SectionDivider />
       <ExecutionSection />
+      <SectionDivider />
       <AttributionSection />
+      <SectionDivider />
       <IntakeFormSection />
+      <SectionDivider />
       <ClosingCtaSection />
     </>
   );
