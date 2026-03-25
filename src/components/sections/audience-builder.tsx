@@ -291,7 +291,7 @@ function FilterPill({
   return (
     <button
       onClick={onClick}
-      className={`rounded-md border px-3 py-2 transition-colors ${
+      className={`rounded-md border px-3 py-3 font-mono text-xs transition-colors ${
         active
           ? "border-accent bg-accent/15 text-accent"
           : "border-border bg-background text-foreground/60 hover:border-accent/50"
