@@ -67,8 +67,8 @@ export function PipelineSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-accent">
-          Chapter 02 — The Pipeline
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+          Infrastructure
         </p>
         <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
           We build a data nervous system for every client.

@@ -60,8 +60,8 @@ export function ExecutionSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-secondary">
-          Chapter 04 — The Execution
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-secondary">
+          Creative engine
         </p>
         <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
           Every campaign asset is specific to the buyer.

@@ -22,8 +22,8 @@ export function HeroSection() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-3xl"
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-primary">
-          Chapter 01 — The Problem
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-primary">
+          The problem
         </p>
         <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
           Most B2B paid media is guesswork built on platform data.

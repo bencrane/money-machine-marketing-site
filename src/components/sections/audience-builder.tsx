@@ -63,8 +63,8 @@ export function AudienceBuilderSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-accent">
-          Chapter 03 — The Audience
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+          Audience construction
         </p>
         <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
           Targeting built from who actually buys.

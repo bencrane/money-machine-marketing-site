@@ -50,8 +50,8 @@ export function AttributionSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 font-mono text-sm uppercase tracking-[0.18em] text-primary">
-          Chapter 05 — The Attribution
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-primary">
+          Attribution
         </p>
         <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
           Follow the money from spend to revenue.

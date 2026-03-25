@@ -126,8 +126,8 @@ export function IntakeFormSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-4 text-center font-mono text-sm uppercase tracking-[0.18em] text-secondary">
-          Chapter 06 — The Machine
+        <p className="mb-4 text-center font-mono text-xs uppercase tracking-[0.18em] text-secondary">
+          Get started
         </p>
         <h2 className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight md:text-5xl">
           Every deal makes the next campaign sharper.
