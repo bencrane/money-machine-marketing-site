@@ -85,7 +85,7 @@ export function PipelineSection() {
         {/* Connecting line */}
         <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-primary/40 via-accent/40 to-secondary/40 md:block" />
 
-        <div className="space-y-1">
+        <div className="space-y-3">
           {pipelineStages.map((stage, i) => (
             <motion.div
               key={stage.label}
