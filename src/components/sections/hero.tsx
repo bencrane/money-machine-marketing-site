@@ -15,7 +15,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="container-tight flex min-h-[calc(100svh-3.5rem)] flex-col justify-center gap-8 pb-12 pt-section">
+    <section className="container-tight relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-end gap-8 pb-20 pt-section">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -72,6 +72,22 @@ export function HeroSection() {
       {state.status === "found" && (
         <EnrichmentCard data={state.data} synthetic={state.synthetic} />
       )}
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="font-mono text-xs text-muted/40"
+        >
+          ↓
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
