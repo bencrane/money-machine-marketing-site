@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { tickerItems } from "@/data/ticker";
 
 function HorizontalStrip({ direction = 1 }: { direction?: 1 | -1 }) {
@@ -107,29 +107,57 @@ function VerticalStrip({ direction = 1 }: { direction?: 1 | -1 }) {
 
 const STRIP = 24; // px — height of horizontal strips, width of vertical strips
 
+function useScrollFade() {
+  const [opacity, setOpacity] = useState(1);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout>>();
+
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    // Fade out over the first 200px of scroll
+    const fade = Math.max(0.08, 1 - scrollY / 200);
+    setOpacity(fade);
+
+    // After user stops scrolling, stay faded
+    clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => {
+      // If back at top, restore full opacity
+      if (window.scrollY < 10) setOpacity(1);
+    }, 150);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  return opacity;
+}
+
 export function TickerBorder({ children }: { children: React.ReactNode }) {
+  const opacity = useScrollFade();
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Top ticker strip */}
       <div
-        className="fixed left-0 right-0 top-0 z-[60] flex items-center border-b border-border/50 bg-black"
-        style={{ height: STRIP }}
+        className="fixed left-0 right-0 top-0 z-[60] flex items-center border-b border-border/50 bg-black transition-opacity duration-300"
+        style={{ height: STRIP, opacity }}
       >
         <HorizontalStrip direction={1} />
       </div>
 
       {/* Left ticker strip */}
       <div
-        className="fixed left-0 top-0 bottom-0 z-[60] border-r border-border/50 bg-black"
-        style={{ width: STRIP, paddingTop: STRIP, paddingBottom: STRIP }}
+        className="fixed left-0 top-0 bottom-0 z-[60] border-r border-border/50 bg-black transition-opacity duration-300"
+        style={{ width: STRIP, paddingTop: STRIP, paddingBottom: STRIP, opacity }}
       >
         <VerticalStrip direction={1} />
       </div>
 
       {/* Right ticker strip */}
       <div
-        className="fixed right-0 top-0 bottom-0 z-[60] border-l border-border/50 bg-black"
-        style={{ width: STRIP, paddingTop: STRIP, paddingBottom: STRIP }}
+        className="fixed right-0 top-0 bottom-0 z-[60] border-l border-border/50 bg-black transition-opacity duration-300"
+        style={{ width: STRIP, paddingTop: STRIP, paddingBottom: STRIP, opacity }}
       >
         <VerticalStrip direction={-1} />
       </div>
@@ -141,8 +169,8 @@ export function TickerBorder({ children }: { children: React.ReactNode }) {
 
       {/* Bottom ticker strip */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-[60] flex items-center border-t border-border/50 bg-black"
-        style={{ height: STRIP }}
+        className="fixed bottom-0 left-0 right-0 z-[60] flex items-center border-t border-border/50 bg-black transition-opacity duration-300"
+        style={{ height: STRIP, opacity }}
       >
         <HorizontalStrip direction={-1} />
       </div>
