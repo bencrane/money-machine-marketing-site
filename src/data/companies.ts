@@ -1,0 +1,285 @@
+// Synthetic enrichment dataset — ~60 tech companies
+// Structured to feel like real firmographic + technographic data
+
+export interface CompanyEnrichment {
+  domain: string;
+  name: string;
+  industry: string;
+  employeeRange: string;
+  fundingStage: string;
+  techStack: string[];
+  annualRevenue: string;
+  intentSignals: string[];
+  icpScore: number; // 0-100
+  recentHires: { role: string; count: number }[];
+}
+
+export const companies: Record<string, CompanyEnrichment> = {
+  "stripe.com": {
+    domain: "stripe.com",
+    name: "Stripe",
+    industry: "Fintech / Payments",
+    employeeRange: "5,000–10,000",
+    fundingStage: "Late Stage",
+    techStack: ["Ruby", "Go", "React", "AWS", "Kubernetes"],
+    annualRevenue: "$14B+",
+    intentSignals: ["Hiring SDRs", "Expanding APAC", "New product launch"],
+    icpScore: 94,
+    recentHires: [{ role: "Account Executive", count: 12 }, { role: "SDR", count: 8 }],
+  },
+  "linear.app": {
+    domain: "linear.app",
+    name: "Linear",
+    industry: "Developer Tools",
+    employeeRange: "50–100",
+    fundingStage: "Series B",
+    techStack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    annualRevenue: "$20M–50M",
+    intentSignals: ["Hiring marketing lead", "Series B announced", "Enterprise tier launch"],
+    icpScore: 88,
+    recentHires: [{ role: "Growth Marketing", count: 2 }, { role: "Enterprise AE", count: 3 }],
+  },
+  "vercel.com": {
+    domain: "vercel.com",
+    name: "Vercel",
+    industry: "Developer Tools / Infrastructure",
+    employeeRange: "300–500",
+    fundingStage: "Series D",
+    techStack: ["Next.js", "TypeScript", "Go", "AWS", "Turborepo"],
+    annualRevenue: "$100M–200M",
+    intentSignals: ["Enterprise push", "Hiring demand gen", "Conference sponsorships"],
+    icpScore: 91,
+    recentHires: [{ role: "Demand Gen Manager", count: 1 }, { role: "SDR", count: 5 }],
+  },
+  "notion.so": {
+    domain: "notion.so",
+    name: "Notion",
+    industry: "Productivity / Collaboration",
+    employeeRange: "500–1,000",
+    fundingStage: "Series C",
+    techStack: ["React", "TypeScript", "Kotlin", "PostgreSQL", "AWS"],
+    annualRevenue: "$200M–500M",
+    intentSignals: ["AI features launch", "Enterprise expansion", "Hiring growth team"],
+    icpScore: 85,
+    recentHires: [{ role: "Growth PM", count: 2 }, { role: "Content Marketing", count: 3 }],
+  },
+  "figma.com": {
+    domain: "figma.com",
+    name: "Figma",
+    industry: "Design Tools",
+    employeeRange: "1,000–2,000",
+    fundingStage: "Acquired (Adobe cancelled)",
+    techStack: ["C++", "WebAssembly", "TypeScript", "React", "AWS"],
+    annualRevenue: "$500M+",
+    intentSignals: ["Dev mode push", "Enterprise tier", "Hiring sales leadership"],
+    icpScore: 82,
+    recentHires: [{ role: "Enterprise Sales", count: 4 }, { role: "DevRel", count: 2 }],
+  },
+  "retool.com": {
+    domain: "retool.com",
+    name: "Retool",
+    industry: "Developer Tools / Low-Code",
+    employeeRange: "200–400",
+    fundingStage: "Series C",
+    techStack: ["TypeScript", "React", "Python", "PostgreSQL", "Docker"],
+    annualRevenue: "$50M–100M",
+    intentSignals: ["AI builder launch", "Hiring AEs", "Self-serve expansion"],
+    icpScore: 87,
+    recentHires: [{ role: "Account Executive", count: 6 }, { role: "Solutions Engineer", count: 3 }],
+  },
+  "supabase.com": {
+    domain: "supabase.com",
+    name: "Supabase",
+    industry: "Developer Tools / BaaS",
+    employeeRange: "100–200",
+    fundingStage: "Series C",
+    techStack: ["TypeScript", "Elixir", "PostgreSQL", "Go", "Deno"],
+    annualRevenue: "$20M–50M",
+    intentSignals: ["Rapid hiring", "Enterprise features", "SOC 2 completion"],
+    icpScore: 89,
+    recentHires: [{ role: "Developer Advocate", count: 2 }, { role: "Growth Engineer", count: 1 }],
+  },
+  "posthog.com": {
+    domain: "posthog.com",
+    name: "PostHog",
+    industry: "Product Analytics",
+    employeeRange: "50–100",
+    fundingStage: "Series B",
+    techStack: ["Python", "Django", "TypeScript", "React", "ClickHouse"],
+    annualRevenue: "$10M–30M",
+    intentSignals: ["All-in-one platform push", "Hiring content team", "CDP launch"],
+    icpScore: 86,
+    recentHires: [{ role: "Content Marketer", count: 2 }, { role: "Growth Engineer", count: 1 }],
+  },
+  "clerk.com": {
+    domain: "clerk.com",
+    name: "Clerk",
+    industry: "Developer Tools / Auth",
+    employeeRange: "50–100",
+    fundingStage: "Series B",
+    techStack: ["TypeScript", "React", "Go", "PostgreSQL"],
+    annualRevenue: "$10M–30M",
+    intentSignals: ["Enterprise auth features", "Rapid growth", "Hiring demand gen"],
+    icpScore: 90,
+    recentHires: [{ role: "Demand Gen", count: 1 }, { role: "AE", count: 2 }],
+  },
+  "resend.com": {
+    domain: "resend.com",
+    name: "Resend",
+    industry: "Developer Tools / Email",
+    employeeRange: "20–50",
+    fundingStage: "Series A",
+    techStack: ["TypeScript", "React", "Rust", "PostgreSQL"],
+    annualRevenue: "$5M–15M",
+    intentSignals: ["Rapid user growth", "New product announcements", "Developer community"],
+    icpScore: 83,
+    recentHires: [{ role: "Growth", count: 1 }, { role: "Engineer", count: 3 }],
+  },
+  "planetscale.com": {
+    domain: "planetscale.com",
+    name: "PlanetScale",
+    industry: "Database / Infrastructure",
+    employeeRange: "100–200",
+    fundingStage: "Series C",
+    techStack: ["Go", "Vitess", "MySQL", "TypeScript", "React"],
+    annualRevenue: "$20M–50M",
+    intentSignals: ["Enterprise database push", "Metal launch", "Hiring GTM"],
+    icpScore: 84,
+    recentHires: [{ role: "GTM Lead", count: 1 }, { role: "Enterprise AE", count: 2 }],
+  },
+  "neon.tech": {
+    domain: "neon.tech",
+    name: "Neon",
+    industry: "Database / Serverless",
+    employeeRange: "100–200",
+    fundingStage: "Series B",
+    techStack: ["Rust", "PostgreSQL", "TypeScript", "React", "AWS"],
+    annualRevenue: "$10M–30M",
+    intentSignals: ["Serverless Postgres growth", "Branching feature", "Enterprise tier"],
+    icpScore: 86,
+    recentHires: [{ role: "Developer Marketing", count: 1 }, { role: "Sales", count: 3 }],
+  },
+  "fly.io": {
+    domain: "fly.io",
+    name: "Fly.io",
+    industry: "Infrastructure / Edge Computing",
+    employeeRange: "50–100",
+    fundingStage: "Series B",
+    techStack: ["Elixir", "Rust", "Go", "Firecracker"],
+    annualRevenue: "$10M–30M",
+    intentSignals: ["GPU compute launch", "Kubernetes alternative push", "Hiring DevRel"],
+    icpScore: 79,
+    recentHires: [{ role: "DevRel", count: 1 }, { role: "SRE", count: 2 }],
+  },
+  "dbt.com": {
+    domain: "dbt.com",
+    name: "dbt Labs",
+    industry: "Data Engineering",
+    employeeRange: "500–800",
+    fundingStage: "Series D",
+    techStack: ["Python", "TypeScript", "React", "Snowflake", "BigQuery"],
+    annualRevenue: "$100M–200M",
+    intentSignals: ["Cloud growth", "Semantic layer push", "Enterprise expansion"],
+    icpScore: 81,
+    recentHires: [{ role: "Enterprise AE", count: 5 }, { role: "Solutions Architect", count: 3 }],
+  },
+  "loom.com": {
+    domain: "loom.com",
+    name: "Loom",
+    industry: "Video / Async Communication",
+    employeeRange: "200–400",
+    fundingStage: "Acquired (Atlassian)",
+    techStack: ["TypeScript", "React", "Python", "GCP", "WebRTC"],
+    annualRevenue: "$100M+",
+    intentSignals: ["Atlassian integration", "AI features", "Enterprise rollout"],
+    icpScore: 76,
+    recentHires: [{ role: "Product Marketing", count: 2 }, { role: "Enterprise CSM", count: 3 }],
+  },
+  "ramp.com": {
+    domain: "ramp.com",
+    name: "Ramp",
+    industry: "Fintech / Spend Management",
+    employeeRange: "500–1,000",
+    fundingStage: "Series D",
+    techStack: ["Python", "TypeScript", "React", "PostgreSQL", "AWS"],
+    annualRevenue: "$200M–500M",
+    intentSignals: ["Rapid headcount growth", "New product verticals", "Mid-market push"],
+    icpScore: 92,
+    recentHires: [{ role: "SDR", count: 10 }, { role: "AE", count: 8 }],
+  },
+  "mercury.com": {
+    domain: "mercury.com",
+    name: "Mercury",
+    industry: "Fintech / Banking",
+    employeeRange: "300–500",
+    fundingStage: "Series C",
+    techStack: ["Haskell", "TypeScript", "React", "PostgreSQL", "AWS"],
+    annualRevenue: "$100M–200M",
+    intentSignals: ["Credit products launch", "Enterprise banking", "Venture debt"],
+    icpScore: 88,
+    recentHires: [{ role: "Growth Marketing", count: 3 }, { role: "BDR", count: 5 }],
+  },
+  "brex.com": {
+    domain: "brex.com",
+    name: "Brex",
+    industry: "Fintech / Corporate Cards",
+    employeeRange: "1,000–2,000",
+    fundingStage: "Late Stage",
+    techStack: ["Elixir", "Kotlin", "TypeScript", "React", "AWS"],
+    annualRevenue: "$300M+",
+    intentSignals: ["Enterprise pivot complete", "AI expense management", "Global expansion"],
+    icpScore: 85,
+    recentHires: [{ role: "Enterprise AE", count: 6 }, { role: "Demand Gen", count: 2 }],
+  },
+  "datadog.com": {
+    domain: "datadog.com",
+    name: "Datadog",
+    industry: "Observability / Monitoring",
+    employeeRange: "5,000+",
+    fundingStage: "Public (DDOG)",
+    techStack: ["Go", "Python", "TypeScript", "React", "AWS"],
+    annualRevenue: "$2B+",
+    intentSignals: ["AI observability", "Security product push", "SMB tier launch"],
+    icpScore: 78,
+    recentHires: [{ role: "AE", count: 15 }, { role: "SDR", count: 20 }],
+  },
+  "amplitude.com": {
+    domain: "amplitude.com",
+    name: "Amplitude",
+    industry: "Product Analytics",
+    employeeRange: "500–1,000",
+    fundingStage: "Public (AMPL)",
+    techStack: ["Java", "TypeScript", "React", "Snowflake", "AWS"],
+    annualRevenue: "$250M+",
+    intentSignals: ["CDP integration", "AI analytics features", "Enterprise expansion"],
+    icpScore: 80,
+    recentHires: [{ role: "Enterprise AE", count: 4 }, { role: "Solutions Engineer", count: 2 }],
+  },
+};
+
+// Domain TLD heuristics for synthetic fallback
+export function generateSyntheticEnrichment(domain: string): CompanyEnrichment {
+  const tld = domain.split(".").pop() || "com";
+  const name = domain.split(".")[0]
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+
+  const isLikelySaas = ["io", "app", "dev", "tech", "ai", "co"].includes(tld);
+  const industry = isLikelySaas ? "SaaS / Technology" : "Technology";
+
+  return {
+    domain,
+    name,
+    industry,
+    employeeRange: isLikelySaas ? "20–100" : "50–500",
+    fundingStage: isLikelySaas ? "Seed – Series B" : "Unknown",
+    techStack: isLikelySaas
+      ? ["TypeScript", "React", "Node.js", "PostgreSQL"]
+      : ["Python", "React", "AWS"],
+    annualRevenue: isLikelySaas ? "$1M–10M" : "$5M–50M",
+    intentSignals: ["Website traffic increase", "New job postings detected"],
+    icpScore: Math.floor(Math.random() * 25) + 55, // 55-80
+    recentHires: [{ role: "Engineering", count: Math.floor(Math.random() * 3) + 1 }],
+  };
+}

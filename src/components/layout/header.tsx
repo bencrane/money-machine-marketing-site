@@ -1,19 +1,30 @@
-import { Sparkles } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
-
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="container-tight flex h-16 items-center justify-between">
-        <a className="inline-flex items-center gap-2 font-semibold" href="/">
-          <Sparkles className="h-5 w-5 text-primary" />
-          <span>Money Machine</span>
+    <header className="sticky top-6 z-40 border-b border-border bg-background/85 backdrop-blur">
+      <div className="container-tight flex h-14 items-center justify-between">
+        <a className="inline-flex items-center gap-2 font-mono text-sm font-semibold" href="/">
+          <span className="text-primary">▸</span>
+          <span>MONEY MACHINE</span>
         </a>
-        <nav className="flex items-center gap-6 text-sm text-muted">
-          <a className="hover:text-foreground" href="#features">Features</a>
-          <a className="hover:text-foreground" href="#testimonials">Testimonials</a>
-          <Button size="default">Get Started</Button>
+        <nav className="hidden items-center gap-1 font-mono text-xs text-muted md:flex">
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#pipeline">
+            Pipeline
+          </a>
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#audience">
+            Audience
+          </a>
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#attribution">
+            Attribution
+          </a>
+          <a className="inline-flex h-11 items-center px-3 transition-colors hover:text-foreground" href="#machine">
+            The Machine
+          </a>
+          <a
+            className="ml-2 inline-flex h-11 items-center rounded-md border border-primary/40 bg-primary/10 px-4 text-primary transition-colors hover:bg-primary/20"
+            href="#machine"
+          >
+            Start here
+          </a>
         </nav>
       </div>
     </header>
